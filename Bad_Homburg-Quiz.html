@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Bad Homburg-Quiz</title>
+    <style>
+        .menu {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 300;
+        }
+
+        .inhalt_fenster {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100vw;
+        }
+
+        .inhalt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #ffffff;
+            line-height: 2em;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 300;
+            font-size: medium;
+            width: 60vw;
+        }
+
+        .menu {
+            background-color: #eeeeee;
+            padding: 1em;
+        }
+
+        span {
+            background-color: #ffdddd;
+            color: #000000;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 20px;
+            border-radius: 5px;
+            margin-right: 1em;
+            height: 30px;
+        }
+
+        .menu div {
+            background-color: #ffdddd;
+            cursor: pointer;
+            padding: 1em;
+            border-radius: 12px;
+            box-shadow: inset 0 0 0em white, 0.1em 0.2em 0.3em #999;
+            font-size: larger;
+        }
+
+        .menu .selected {
+            box-shadow: inset 0 0 0em black, 0.2em 0.3em 0.4em #999;
+            background-color: rgb(255, 235, 235);
+        }
+
+        li {
+            font-weight: bolder;
+            margin-top: 1em;
+        }
+
+        .inhalt div {
+            display: flex;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        #Einführung,
+        #Auswertung {
+            margin-top: 2em;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function zeig(titeldiv) {
+            //alle zuvor angezeigten inhaltsdivs ausblenden
+            //gib alle elemente mit klasse inhalt und setze style auf leer 
+            document.querySelectorAll(".inhalt").forEach(el => el.style = "display:none");
+
+            //inhaltdiv des selektierten titeldivs wird gezeigt
+            //get das inhaltsdiv (element) dessen id dem innertext des ausgewählten titeldivs gleicht
+            document.getElementById(titeldiv.innerText).style = "";
+
+            //alle zuvor Selektierten unscheinbar machen
+            document.querySelectorAll(".selected").forEach((el) => el.setAttribute("class", ""));
+            // das Angeklickte wird hervorgehoben
+            titeldiv.setAttribute("class", "selected");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="menu" style="width:100vw; display: flex;flex-direction: row; justify-content: space-evenly;">
+        <div onclick="zeig(this)" class="selected">Einführung</div>
+        <div onclick="zeig(this)">Geographie</div>
+        <div onclick="zeig(this)">Historie</div>
+        <div onclick="zeig(this)">Sehenswürdigkeiten</div>
+        <div onclick="zeig(this)">Kultur</div>
+        <div onclick="zeig(this)">Auswertung</div>
+    </div>
+    <img style="height:7%;width:8%; position:absolute;top: 1.8em; 
+    left: -0.25em;" src="https://logosmarken.com/wp-content/uploads/2021/12/Bad-Homburg-Emblem.png"
+        alt="Bad Homburg-Symbol">
+    <div class="inhalt_fenster">
+        <!--- Bad Homburg -->
+        <div id="Einführung" class="inhalt">
+            <h3>SIND SIE GEBÜRTIGER BAD HOMBURGER?<br /></h3>
+            Dieses Quiz stellt heraus, ob es sich bei Ihnen um einen 100%igen Bürger Bad Homburgs handelt.<br />
+            Auf Sie warten 26 Fragen zu verschiedenen Themenbereichen. <br />
+            Es gibt jeweils nur eine richtige Antwortmöglichkeit.<br />
+            Notieren Sie sich den Buchstaben neben der richtigen Antwort, erwartet Sie ein Lösungssatz.<br />
+            Lassen Sie ihre Kenntnisse über Bad Homburg nun testen!<br />
+
+        </div>
+        <ol>
+            <!--- Geographie -->
+            <div id="Geographie" class="inhalt" style="display:none">
+                <li>Es heißt Bad Homburg <i>vor der H&ouml;he</i>, weil…</li>
+                <div><span>D</span>Frankfurt eine Skyline mit hohen Wolkenkratzern hat.</div>
+                <div><span>S</span>das Hochtaunusgebirge hinter der Stadt liegt.</div>
+
+                <li>Wie viele Einwohner hat Bad Homburg etwa?</li>
+                <div><span>U</span>140.000</div>
+                <div><span>T</span>94.000</div>
+                <div><span>I</span>54.000</div>
+
+                <li>Wie groß ist die Oberfl&auml;che Bad Homburgs etwa?</li>
+                <div><span>A</span>30km&sup2;</div>
+                <div><span>E</span>50km&sup2;</div>
+                <div><span>H</span>70km&sup2;</div>
+
+                <li>Bad Homburg ist eine…</li>
+                <div><span>B</span>Großstadt</div>
+                <div><span>S</span>Kurstadt</div>
+                <div><span>R</span>Hafenstadt</div>
+
+                <li>Was hat die nahe Umgebung von Bad Homburg <b>nicht</b> zu bieten?</li>
+                <div><span>I</span>Meer</div>
+                <div><span>O</span>Wald</div>
+                <div><span>T</span>Berge</div>
+
+                <li>Welcher Bach fließt <b>nicht</b> durch Bad Homburg?</li>
+                <div><span>L</span>Eschbach</div>
+                <div><span>N</span>Eberbach</div>
+                <div><span>C</span>Erlenbach</div>
+
+                <li>Was bauen die Landwirte Bad Homburgs <b>nicht</b> an?</li>
+                <div><span>E</span>Getreide</div>
+                <div><span>P</span>Mais</div>
+                <div><span>D</span>Bananen</div>
+                <div><span>&Auml;</span>Zuckerr&uuml;ben</div>
+                <div><span>N</span>Kartoffeln</div>
+
+                <li>Welche Baumart pr&auml;gt den Baumbestand im Hardtwald?</li>
+                <div><span>C</span>Palme</div>
+                <div><span>A</span>Afrikanischer Affenbrotbaum</div>
+                <div><span>E</span>Rotbuche</div>
+            </div>
+
+            <!--- Historie -->
+            <div id="Historie" class="inhalt" style="display:none">
+                <li value="9">Welcher dieser Kaiser nutzte das Bad Homburger Schloss als Sommerresidenz?</li>
+                <div><span>S</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Kaiser_Wilhelm_II_of_Germany_-_1902.jpg/1200px-Kaiser_Wilhelm_II_of_Germany_-_1902.jpg"
+                        alt="Wilhelm II" /></div>
+                <div><span>H</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/35/Kaiser_Friedrich_III_Portr%C3%A4t.jpg"
+                        alt="Friedrich III" /></div>
+                <div><span>B</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Kaiser_Wilhelm_I._.JPG/1280px-Kaiser_Wilhelm_I._.jpg"
+                        alt="Wilhelm I" /></div>
+                <div><span>I</span>Alle drei</div>
+                <li>Wie sieht das Wappen von Bad Homburg aus?</li>
+                <div><span>G</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1000px-Flag_of_Ukraine.svg.png"
+                        alt="Ukraineflagge" /></div>
+                <div><span>N</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/54/Wappen_Bad_Homburg_vor_der_H%C3%B6he.svg"
+                        alt="Wappen Bad Homburg" /></div>
+                <div><span>L</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://cdn.pixabay.com/photo/2013/07/13/01/09/european-union-155207__480.png"
+                        alt="Europaflagge" /></div>
+
+
+                <li>Bad Homburg birgt den ältesten … Deutschlands.</li>
+                <div><span>Y</span>Käse</div>
+                <div><span>P</span>Wein</div>
+                <div><span>B</span>Golfplatz</div>
+            </div>
+
+            <!--- Sehenswürdigkeiten -->
+            <div id="Sehenswürdigkeiten" class="inhalt" style="display:none">
+                <li value="13">Das Erkennungszeichen Bad Homburgs ist der … Turm im Schlosspark.</li>
+                <div><span>&Uuml;</span>blaue</div>
+                <div><span>O</span>ockerfarbene</div>
+                <div><span>A</span>weiße</div>
+
+                <li>In welcher Straße geht man einkaufen?</li>
+                <div><span>R</span>Lisastraße</div>
+                <div><span>T</span>Lunastraße</div>
+                <div><span>D</span>Louisenstraße</div>
+                <div><span>C</span>Cousinenstraße</div>
+
+                <li>Welches dieser Bauwerke steht <b>nicht</b> in Bad Homburg?</li>
+                <div><span>M</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Bad_Homburg_Russische_Kapelle_2016-03-11-18-13-03.jpg"
+                        alt="Russische Kapelle" /></div>
+                <div><span>W</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://img.fotocommunity.com/thai-sala-im-kurpark-bad-homburg-5-3352873c-ea14-4e7e-971f-045437f677cb.jpg?height=1080"
+                        alt="Thai-Sala" /></div>
+                <div><span>H</span><img style="width:35%; height:35%;border-radius:2em;"
+                        src="https://www.holidaywolf.de/wp/wp-content/uploads/2021/05/eiffelturm-1024x768.jpg"
+                        alt="Eiffelturm" /></div>
+                <li>Wo wird der Weihnachtsmarkt ausgetragen?</li>
+                <div><span>A</span>Im Rathaus</div>
+                <div><span>O</span>Auf dem Schlossplatz</div>
+                <div><span>I</span>Im Kurpark</div>
+
+                <li>Welche Anlage ist Teil des Kurparks?</li>
+                <div><span>M</span>Jubiläumspark</div>
+                <div><span>L</span>Gotisches Haus</div>
+                <div><span>E</span>Hirschgarten</div>
+
+                <li>Sie befinden sich im Kirdorferfeld. Wie ist die Steigung auf dem Weg zum Römerkastell Saalburg?</li>
+                <div><span>B</span>positiv</div>
+                <div><span>K</span>negativ</div>
+
+                <li>Welchen Park zeigt die Abbildung?</li>
+                <img style="width:50%; height:50%;border-radius:2em;"
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Schloss_HG.jpg" alt="Schlosspark" />
+                <div><span>E</span>Kurpark</div>
+                <div><span>U</span>Schlosspark</div>
+
+                <li>Wie heißt der Turm in der Altstadt, dessen Name ein Fabelwesen beinhaltet?</li>
+                <div><span>H</span>Elfenturm</div>
+                <div><span>R</span>Hexenturm</div>
+                <div><span>W</span>Koboldturm</div>
+
+                <li>Welche Kirche steht <b>nicht</b> in Bad Homburg?</li>
+                <div><span>G</span><img style="width:40%; height:40%;border-radius:2em;"
+                        src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Cath%C3%A9drale_Notre-Dame_de_Paris%2C_20_March_2014.jpg"
+                        alt="Notre Dame" /></div>
+                <div><span>K</span><img style="width:40%; height:40%;border-radius:2em;"
+                        src="https://www.bad-homburg.de/erleben/entdecken/kirchen/bilder/2022/st-marien/7103/image-thumb__7103__image_collage_slider_full_desktop/St_Marien_Kirche3_Bad%20Homburg_%C2%A9KUK.jpg"
+                        alt="Marienkirche" /></div>
+                <div><span>N</span><img style="width:40%; height:40%;border-radius:2em;"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/BHvdH_Erloeserkircher_Frontansicht_EVA_8493.jpg/1200px-BHvdH_Erloeserkircher_Frontansicht_EVA_8493.jpg"
+                        alt="Erlöserkirche" /></div>
+
+            </div>
+
+            <!--- Kultur -->
+            <div id="Kultur" class="inhalt" style="display:none">
+                <li value="21">Der Slogan der Stadt lautet <i>"Champagnerluft und …"</i></li>
+                <div><span>V</span><i>Frustration</i></div>
+                <div><span>M</span><i>Kapitulation</i></div>
+                <div><span>I</span><i>Subtraktion</i></div>
+                <div><span>K</span><i>Tradition</i></div>
+
+                <li>Welches Turnier findet seit 2021 jährlich im Kurpark Bad Homburg statt?</li>
+                <div><span>E</span>WTA 250 Tennis Turnier der Damen</div>
+                <div><span>&Ouml;</span>Kaninchenrennen</div>
+                <div><span>F</span>Tauziehen der über 80-Jährigen</div>
+
+                <li>Was macht man beim Laternenfest?</li>
+                <div><span>R</span>Man geht mit seiner Laterne.</div>
+                <div><span>N</span>Man isst Zuckerwatte, gebrannte Mandeln und begibt sich zu Fahrgeschäften, um
+                    herumgeschleudert zu werden.</div>
+
+                <li>Welche Schule gibt es in Bad Homburg <b>nicht</b>?</li>
+                <div><span>X</span>GAG</div>
+                <div><span>J</span>KFG</div>
+                <div><span>L</span>Baumschule</div>
+                <div><span>N</span>FIS</div>
+                <div><span>Z</span>Accadis</div>
+                <div><span>Q</span>Maria-Ward-Schule</div>
+                <div><span>T</span>HUS</div>
+
+                <li>Wo treffen sich Jugendliche zum Schwimmen?</li>
+                <div><span>B</span>Taunus Therme</div>
+                <div><span>A</span>Onkel Gustavs Froschteich</div>
+                <div><span>E</span>Seedammbad</div>
+                <div><span>U</span>Kaiser-Wilhelmsbad</div>
+
+
+                <li>Was fließt aus den Brunnen im Kurpark?</li>
+                <div><span>L</span>Orangensaft der Orangerie</div>
+                <div><span>N</span>Regenwasser</div>
+                <div><span>T</span>Leitungswasser mit Kohlensäure</div>
+                <div><span>R</span>Quellwasser mit heilender Wirkung</div>
+            </div>
+        </ol>
+
+        <!--- Auswertung -->
+        <div id="Auswertung" class="inhalt" style="display:none">
+
+            <table>
+                <tr>
+                    <th>__ __ __</th>
+                    <th>__ __ __ __</th>
+                    <th>__ __ __</th>
+                    <th>__ __ __</th>
+                    <th>__ __ __ __ __ __ __ </th>
+                    <td>–</td>
+                    <th>__ __ __ __ __ __</th>
+                    <td>!</td>
+                </tr>
+                <tr>
+                    <td>1 2 3</td>
+                    <td>4 5 6 7</td>
+                    <td>8 9 10</td>
+                    <td>11 12 13</td>
+                    <td>14 15 16 17 18 19 20</td>
+                    <td></td>
+                    <td>21 22 23 24 25 26</td>
+                    <td></td>
+                </tr>
+               <h3>Lösungssatz:</h3>
+                <tr>
+                    <td>SIE</td>
+                    <td>SIND</td>
+                    <td>EIN</td>
+                    <td>BAD</td>
+                    <td>HOMBURG</td>
+                    <td>–</td>
+                    <td>KENNER</td>
+                    <td>!</td>
+                </tr>
+
+            </table>
+            Falls Sie mehr als 3 Buchstaben falsch haben, durchstöbern Sie gerne die folgenden Seiten über Bad Homburg:
+        </div>
+    </div>
+
+</body>
